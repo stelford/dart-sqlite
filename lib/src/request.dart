@@ -80,7 +80,7 @@ class Request {
     }
 
     void loop() {
-      timer = new Timer(Duration.ZERO, () {
+      timer = new Timer(Duration.zero, () {
         if (step()) {
           loop();
         }
