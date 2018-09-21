@@ -36,7 +36,7 @@ Future main(List<String> args) async {
 
   final authHeaders = {};
   if (username != null && token != null) {
-    final authToken = BASE64.encode(UTF8.encode('$username:$token'));
+    final authToken = base64.encode(utf8.encode('$username:$token'));
     authHeaders['Authorization'] = 'Basic $authToken';
   }
   final releasesBody =
@@ -44,7 +44,7 @@ Future main(List<String> args) async {
     print('Unable to list releases: $e');
     exit(314);
   });
-  final releases = JSON.decode(releasesBody);
+  final releases = json.decode(releasesBody);
 
   final Map<String, dynamic> release = releases.firstWhere(
       (release) => release['tag_name'] == 'v$version',
