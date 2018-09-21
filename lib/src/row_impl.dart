@@ -8,7 +8,7 @@ import 'exceptions.dart';
 import 'row.dart';
 
 class RowMetadata {
-  final List<String> columns;
+  final List<dynamic> columns;
   final Map<String, int> columnToIndex = {};
 
   RowMetadata(this.columns) {
